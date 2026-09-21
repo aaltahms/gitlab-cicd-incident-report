@@ -1,0 +1,66 @@
+[
+  {
+    "id": "INC-1001",
+    "severity": "high",
+    "status": "resolved",
+    "service": "Identity",
+    "opened_at": "2026-08-04T13:10:00Z",
+    "resolved_at": "2026-08-04T14:05:00Z"
+  },
+  {
+    "id": "INC-1002",
+    "severity": "medium",
+    "status": "closed",
+    "service": "Endpoint",
+    "opened_at": "2026-08-05T12:30:00Z",
+    "resolved_at": "2026-08-05T14:00:00Z"
+  },
+  {
+    "id": "INC-1003",
+    "severity": "critical",
+    "status": "resolved",
+    "service": "Network",
+    "opened_at": "2026-08-06T15:00:00Z",
+    "resolved_at": "2026-08-06T15:42:00Z"
+  },
+  {
+    "id": "INC-1004",
+    "severity": "low",
+    "status": "open",
+    "service": "Printing",
+    "opened_at": "2026-08-07T16:20:00Z",
+    "resolved_at": null
+  },
+  {
+    "id": "INC-1005",
+    "severity": "high",
+    "status": "investigating",
+    "service": "Identity",
+    "opened_at": "2026-08-08T11:15:00Z",
+    "resolved_at": null
+  },
+  {
+    "id": "INC-1006",
+    "severity": "medium",
+    "status": "resolved",
+    "service": "Endpoint",
+    "opened_at": "2026-08-09T09:05:00Z",
+    "resolved_at": "2026-08-09T10:20:00Z"
+  },
+  {
+    "id": "INC-1007",
+    "severity": "low",
+    "status": "closed",
+    "service": "Printing",
+    "opened_at": "2026-08-10T18:00:00Z",
+    "resolved_at": "2026-08-10T18:25:00Z"
+  },
+  {
+    "id": "INC-1008",
+    "severity": "medium",
+    "status": "resolved",
+    "service": "Collaboration",
+    "opened_at": "2026-08-11T14:40:00Z",
+    "resolved_at": "2026-08-11T16:00:00Z"
+  }
+]
