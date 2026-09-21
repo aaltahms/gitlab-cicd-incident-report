@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-test-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        python: ["3.9", "3.12", "3.13"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Validate source
+        run: python -m compileall -q src tests
+
+      - name: Run unit tests
+        run: PYTHONPATH=src python -m unittest discover -s tests -v
+
+      - name: Build report artifacts
+        run: |
+          mkdir -p build
+          PYTHONPATH=src python -m incident_summary.cli examples/incidents.json --json build/summary.json --html build/index.html --as-of 2026-09-21T00:00:00Z
+
+      - name: Upload report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: incident-report-python-${{ matrix.python }}
+          path: build/
+          if-no-files-found: error
+          retention-days: 7
